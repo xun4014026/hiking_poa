@@ -7,13 +7,27 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "echarts": "^5.1.2",
+    "leaflet": "^1.7.1",
+    "leaflet-geosearch": "^3.3.2",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0"
+    "vue-axios": "^3.2.5",
+    "vue-router": "^3.2.0",
+    "vue2-leaflet": "^2.7.1",
+    "vue2-leaflet-geosearch": "^1.0.6",
+    "vue2-leaflet-markercluster": "^3.1.0",
+    "vuetify": "^2.4.0",
+    "vuewordcloud": "^18.7.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.2",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
   },
   "browserslist": [
     "> 1%",

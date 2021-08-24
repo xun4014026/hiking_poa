@@ -1,0 +1,23 @@
+{"mountain_top100_data" : [
+    {"id":0, 
+    "mountain_name": "玉山", 
+    "lat_lng": [23.470002,120.957274], 
+    "doc_num":300, 
+    "wordcloud":[
+        {"text":"東風", "weight":0.0813588035, "color":"red"},
+        {"text":"西風", "weight":0.0213588035, "color":"blue"},
+        {"text":"南風", "weight":0.0333588035, "color":"green"}]
+    },
+
+    {"id":1, 
+        "mountain_name": "雪山", 
+        "lat_lng": [24.383401,121.231754], 
+        "doc_num":130, 
+        "wordcloud":[
+            {"text":"奇萊", "weight":0.0813588035, "color":"red"},
+            {"text":"營地", "weight":0.0213588035, "color":"blue"},
+            {"text":"稜線", "weight":0.0333588035, "color":"green"}]
+    }
+    
+    
+]}

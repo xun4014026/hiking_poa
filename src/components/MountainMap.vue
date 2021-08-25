@@ -110,20 +110,7 @@ Reset
         setTimeout(() => {
           this.zoom = 12
         }, 500)
-        // setTimeout(function () {
-               
-
-        // }, 1000);
-        
-        
       }
-      
-      // or 
-      // this.$refs.myMap.setView(L.latLng(47.413220, -1.219482), 13);
-      /*
-      this.$refs.map.setZoom(13)
-        this.$refs.map.setCenter(L.latLng(47.413220, -1.219482))
-        */
 
     }
   },

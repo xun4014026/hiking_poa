@@ -1,22 +1,17 @@
 <template>
   <v-container class="pa-0" fluid >
-  <v-layout class="ma-0 pb-0" style="height: 89vh">
-  <!-- <hello-world /> -->
-  
-
-  <!-- <google-trend/> -->
-    <v-flex xs6 sm6 md6 class="ma-0 pb-0">
-      <v-card class="mx-10 pb-0">
+  <v-layout class="ma-0 pa-0" style="height: 89vh">
+    <v-flex xs6 sm6 md6 class="ma-0 pa-0">
+      <v-card class="mx-10 pa-0">
         <mountain-map style="height: 89vh" v-on:MountainRow="MountainRow" :SearchMountainId="searchInput" :ShowMountainData="show_mountain_data"/>
       </v-card>
     </v-flex>
 
-    <v-flex xs6 sm6 md6 class='ma-0 pb-0' style="height: 89vh; overflow: auto">
-      <v-card class="mr-10 pb-0 elevation-0" >
-      <!-- v-model="values" -->
+    <v-flex xs6 sm6 md6 class='ma-0 pa-0' style="height: 89vh; overflow: auto">
+      <v-card class="mr-10 pa-0 elevation-0" >
       <v-card class="elevation-0" >
       <v-layout>
-      <v-flex xs2 sm2 md2 class='ma-1 pb-0'>
+      <v-flex xs2 sm2 md2 class='ma-1 pa-0'>
         <v-select
           v-model="filter_grade"
           :items="grade"
@@ -27,9 +22,8 @@
           @change="grade_onChange"
         ></v-select>
       </v-flex>
-      <!-- chips -->
-          <!-- small-chips -->
-      <v-flex xs3 sm3 md3 class='ma-1 pb-0'>
+
+      <v-flex xs3 sm3 md3 class='ma-1 pa-0'>
         <v-autocomplete
           v-model="filter_mountain"
           :items="show_mountain_data"
@@ -43,15 +37,11 @@
         ></v-autocomplete>
       
       </v-flex>
-      <!-- <v-flex xs3 sm3 md3 class='ma-1 pb-0'>
+      <!-- <v-flex xs3 sm3 md3 class='ma-1 pa-0'>
         <h2>{{filter_mountain}}</h2>
       </v-flex> -->
       </v-layout>
       </v-card>
-    <!-- <h1>{{searchInput}}</h1> -->
-    <!-- <h1>山名:{{mountain_info.mountain_name}}</h1> -->
-    <!-- <div v-for="item in mountain_info.wordcloud"> -->
-    <!-- :color="([, weight]) => weight > 0.5 ? 'DeepPink' : weight > 0.1 ? 'RoyalBlue' : 'Indigo'" -->
     
 
     <v-tabs v-model="tab" grow color="#42865F" v-if="!filter">
@@ -60,21 +50,13 @@
       </v-tab>
     </v-tabs>
 
-    <!-- <v-divider class="justify-center mt-3 mb-3"></v-divider> -->
-
     <v-card  v-if="!filter" class="elevation-0 ma-0 mt-5 pt-0" style="height: 50vh;">
-      <v-card-title class="ma-0 pb-0">
-        聲量趨勢
-      </v-card-title>
+      <v-card-title class="ma-0 pa-0">聲量趨勢</v-card-title>
       <line-chart :Grade="filter_grade" :Tab="tab"/>
     </v-card>
+
     <v-card  v-if="filter | filter_grade!='all'" class="elevation-0 ma-0 pt-0" style="height: 40vh;">
-      <v-card-title class="ma-0 pb-0">
-        熱門話題
-      </v-card-title>
-      <!-- <v-card-subtitle v-if="!filter" class="ma-0 pb-0 elevation-0">
-        請先選擇一座山
-      </v-card-subtitle> -->
+      <v-card-title class="ma-0 pa-0">熱門話題</v-card-title>
       <v-layout>
       <v-flex xs1 sm1 md1>
         <v-avatar color="#9BD9CE" size="24" class="ma-2">
@@ -118,10 +100,8 @@
       </v-layout>
     </v-card>
 
-<!-- class="elevation-3" -->
-    <!-- <v-divider class="justify-center mt-3 mb-3"></v-divider> -->
-    <v-card v-if="filter | filter_grade!='all'" class="elevation-0 ma-0 pb-0" >
-    <v-card-title class="ma-0 pb-0">
+    <v-card v-if="filter | filter_grade!='all'" class="elevation-0 ma-0 pa-0" >
+    <v-card-title class="ma-0 pa-0">
       相關文章
     </v-card-title>
     <!--  -->
@@ -132,9 +112,6 @@
       <v-chip small class="mr-1" v-if="clickword != ''">{{ clickword }}<v-icon class="ml-1" @click="closeword()">mdi-close</v-icon></v-chip>
       <h4 v-if="filter">相關討論數:{{mountain_related_articles.length}}</h4>
       <h4 v-else>相關討論數:{{grade_related_articles.length}}</h4>      
-      <!-- <v-flex xs1 sm1 md1 class="ma-0 pb-0"><v-chip>{{ filter_mountain }}</v-chip></v-flex>
-      <v-flex xs1 sm1 md1 class="ma-0 pb-0"><v-chip>{{ filter_mountain }}</v-chip></v-flex>
-      <v-flex xs1 sm1 md2 class="ma-0 pb-0"><h5>相關討論數:{{mountain_info.doc_num}}</h5></v-flex>   -->
     </v-layout>
     <v-layout v-if="filter" column style="height: 40vh" >   
       <v-flex style="overflow: auto"> 
